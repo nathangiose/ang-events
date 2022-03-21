@@ -4,25 +4,14 @@ import { Component } from '@angular/core'
     selector: 'events-list',
     template: `
     <div>
-        <h1>Upcoming Angular Events</h1>
-        <hr>
-        <div class="well hoverwell thumbnail">
-            <h2>{{event.name}}</h2>
-            <div>Date: {{event.date}}</div>
-            <div>Time: {{event.time}}</div>
-            <div>Price: R{{event.price}}</div>
-            <div>
-                <span>Location: {{event.location.address}}</span>
-                <span>&nbsp;</span>
-                <span>{{event.location.city}}, {{event.location.country}}</span>
-            </div>
-
-        </div>
+    <h1>Upcoming Angular Events</h1>
+    <hr>
+    <event-thumbnail (eventClick)="handleEventClicked($event)" [event]="event1"></event-thumbnail>
     </div>
     `
 })
 export class EventsListComponent{
-    event = {
+    event1 = {
         id: 1,
         name: 'Angular Connect',
         date: '2/5/2023',
@@ -34,6 +23,10 @@ export class EventsListComponent{
             city: 'Cape Town',
             country: 'South Africa'
         }
+    }
+    
+    handleEventClicked(data) {
+        console.log('recieved:', data)
     }
 
 }
