@@ -292,11 +292,7 @@ export class EventsListComponent{
           time: '9:00 am',
           price: 400.00,
           imageUrl: '/assets/images/ng-vegas.png',
-          location: {
-            address: 'The Excalibur',
-            city: 'Las Vegas',
-            country: 'USA'
-          },
+          onlineUrl: 'http://ng-nl.org/',
           sessions: [
             {
               id: 1,
